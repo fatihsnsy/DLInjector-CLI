@@ -1,6 +1,5 @@
 ﻿#include <iostream>
 #include <windows.h>
-#include <psapi.h>
 #include <string>
 #include <tlhelp32.h>
 #include <comdef.h>
@@ -61,14 +60,10 @@ int wmain(int argc, wchar_t* argv[]) {
 
 		while (retHandle == NULL) {
 			retHandle = FindHandle(argv[1]);
-			wcout << "Waiting open the " << argv[1] << " !" << endl;
-			Sleep(2000);
-		}
-
-
-		if (retHandle == NULL) {
-			cout << "Invalid handle! " << endl;
-			return -1;
+			if (retHandle == NULL) {
+				wcout << "Waiting open the " << argv[1] << " !" << endl;
+				Sleep(2000);
+			}
 		}
 
 		cout << "Allocating memory!" << endl;
@@ -105,7 +100,5 @@ int wmain(int argc, wchar_t* argv[]) {
 		wcout << "USAGE: " << argv[0] << " [target.exe] [source.dll PATH]";
 		return -1;
 	}
-
-
 
 }
