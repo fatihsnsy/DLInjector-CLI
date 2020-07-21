@@ -21,3 +21,5 @@ DLInjector.exe [target process name(with extension)] [dll to be injected]
 
 
 I want developed the DLInjector in my spare time. If you want to develop DLInjector too, you can send a pull request. 
+
+### If you want to using DLInjector from command line, look at the [DLInjector-GUI](https://github.com/fatihsnsy/DLInjector-GUI)
